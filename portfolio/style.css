@@ -1,0 +1,131 @@
+/* CSS Variables */
+
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #222;
+    --card-color: white;
+    --primary: #0077ff;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-color: #1e1e1e;
+}
+
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Main Layout Using CSS Grid */
+
+.container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Cards */
+
+.card {
+    background: var(--card-color);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+}
+
+/* Project Grid */
+
+.project-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.project {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Tablet */
+
+@media (min-width: 768px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #projects {
+        grid-column: span 2;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+
+@media (min-width: 1024px) {
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #projects {
+        grid-column: span 3;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hover Effects */
+
+.project:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
